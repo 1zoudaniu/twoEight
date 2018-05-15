@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">测试机器</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment1">第一个页面  首页  内容页     下面的小图标要找几个跟这个匹配的</string>
+    <string name="hello_blank_fragment2">第二个页面  内容  内容页     下面的小图标要找几个跟这个匹配的</string>
+    <string name="hello_blank_fragment3">第三个页面  我的  我的页     下面的小图标要找几个跟这个匹配的</string>
+</resources>

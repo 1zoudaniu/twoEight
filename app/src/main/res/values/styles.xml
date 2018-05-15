@@ -1,0 +1,79 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+    <!-- YzsLoadingDialog样式 -->
+    <style name="ZylLoadingDialog" parent="android:Theme.Dialog">
+        <!-- 出现与消失动画效果 -->
+        <!--<item name="android:windowAnimationStyle">@style/anim_bootom_in_out</item>-->
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 模糊 -->
+        <item name="android:backgroundDimEnabled">false</item>
+        <!--  点击外侧不消失-->
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <!-- Animation.AppCompat.Dialog -->
+    <style name="BMProgressDialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.6</item>
+    </style>
+
+    <!--全屏helpDialog-->
+    <style name="HelpDialogAll" parent="@android:style/Theme.Dialog">
+        <!--背景透明度-->
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!--全屏-->
+        <item name="android:windowFullscreen">true</item>
+        <!--悬浮-->
+        <item name="android:windowIsFloating">true</item>
+        <!--边框-->
+        <item name="android:windowFrame">@null</item>
+        <!--Dialog以为的模糊效果-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--半透明-->
+        <item name="android:windowIsTranslucent">false</item>
+        <!--无标题-->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 屏幕背景是否变暗 -->
+        <item name="android:backgroundDimAmount">0.4</item>
+        <!--进出动画-->
+        <item name="android:windowAnimationStyle">@style/ActionSheetAnimation</item>
+    </style>
+
+    <style name="ActionSheetAnimation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/dialog_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_bottom_out</item>
+    </style>
+
+
+</resources>

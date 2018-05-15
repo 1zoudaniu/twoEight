@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/dialog_login_login"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_coner_loginregister_bg"
+            android:gravity="center"
+            android:text="第一个"
+            android:textColor="#000" />
+
+        <Button
+            android:id="@+id/dialog_login_no_login"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_coner_loginregister_bg"
+            android:text="第er个"
+            android:textColor="#000" />
+
+    </LinearLayout>
+
+</LinearLayout>

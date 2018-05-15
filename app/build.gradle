@@ -1,0 +1,32 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+    defaultConfig {
+        applicationId "zou.te.happy.com.happyte"
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api 'com.android.support:appcompat-v7:27.1.1'
+    api 'com.android.support:design:27.1.1'
+    api 'com.github.bumptech.glide:glide:4.7.1'
+    api 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+
+    api 'com.android.support.constraint:constraint-layout:1.1.0'
+}

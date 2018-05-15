@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="zou.te.happy.com.happyte.activitys.MainActivity">
+
+    <RadioGroup
+        android:id="@+id/main_rl_top"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/main_rb_home"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="true"
+            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/tab_remind_selector"
+            android:gravity="center_horizontal"
+            android:text="首页"
+            android:textColor="@drawable/tab_textcolor_selector"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/main_rb_content"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/tab_plan_selector"
+            android:gravity="center_horizontal"
+            android:text="内容"
+            android:textColor="@drawable/tab_textcolor_selector"
+            android:textSize="12sp" />
+
+
+        <RadioButton
+            android:id="@+id/main_rb_my"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="5dp"
+            android:drawableTop="@drawable/tab_personal_selector"
+            android:gravity="center_horizontal"
+            android:text="我的"
+            android:textColor="@drawable/tab_textcolor_selector"
+            android:textSize="12sp" />
+    </RadioGroup>
+
+    <zou.te.happy.com.happyte.utils.widgetUtils.CustomViewPager
+        android:id="@+id/main_vp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/main_rl_top"
+        android:layout_marginBottom="0dp" />
+
+</RelativeLayout>
+
+

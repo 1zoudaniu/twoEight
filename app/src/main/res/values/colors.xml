@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!--loading的字体颜色-->
+    <color name="c_dialog_loading">#BDBDBD</color>
+    <!--home tab文字颜色  按住与正常状态-->
+    <color name="t_tab_text_pressed">#f43906</color>
+    <color name="t_tab_text_normal">#999999</color>
+
+</resources>
