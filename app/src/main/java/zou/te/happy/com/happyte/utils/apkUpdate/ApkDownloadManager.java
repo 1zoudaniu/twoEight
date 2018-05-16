@@ -7,7 +7,7 @@ import android.net.Uri;
 import android.os.Environment;
 import android.util.Log;
 
-import zou.te.happy.com.happyte.app.BaseApplication;
+import zou.te.happy.com.happyte.app.MyApp;
 import zou.te.happy.com.happyte.utils.SystemUtil;
 
 /**
@@ -61,7 +61,7 @@ public class ApkDownloadManager {
 
         //设置下载文件保存的位置
         //这种保存的形式为file:///storage/emulated/0/Android/data/your-package/files/Download/packageName.apk
-        request.setDestinationInExternalFilesDir(context, Environment.DIRECTORY_DOWNLOADS, SystemUtil.getPackageInfo(BaseApplication.getInstance()).packageName);
+        request.setDestinationInExternalFilesDir(context, Environment.DIRECTORY_DOWNLOADS, SystemUtil.getPackageInfo(MyApp.getInstance()).packageName);
         Log.d(TAG, "APK save path is : " + Environment.DIRECTORY_DOWNLOADS);
 
         //保存路径还可以自定义

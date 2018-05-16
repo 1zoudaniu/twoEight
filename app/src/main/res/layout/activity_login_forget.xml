@@ -5,10 +5,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#c47c6c6e"
-    tools:context="zou.te.happy.com.happyte.activitys.LoginRegisterActivity">
+    tools:context="zou.te.happy.com.happyte.activitys.LoginForgetActivity">
 
     <EditText
-        android:id="@+id/register_edit_tel"
+        android:id="@+id/forget_edit_tel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -23,7 +23,7 @@
         android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/register_edit_yzm"
+        android:id="@+id/forget_edit_yzm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -38,7 +38,7 @@
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/register_text_getYzm"
+        android:id="@+id/forget_text_getYzm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -49,7 +49,7 @@
         android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/register_edit_password"
+        android:id="@+id/forget_edit_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -65,15 +65,14 @@
         android:textSize="18sp" />
 
     <Button
-        android:id="@+id/register_btn_login"
+        android:id="@+id/forget_btn_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
         android:background="#ffffff"
-        android:text="下一步"
+        android:text="登陆"
         android:textColor="#343f4a"
         android:textSize="18sp" />
-
 
 </LinearLayout>

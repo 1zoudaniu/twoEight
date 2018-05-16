@@ -95,7 +95,7 @@ public class LoginActivity extends BaseActivity {
     public void onWidgetClick(View view) {
         switch (view.getId()) {
             case R.id.btn_loginregister:
-                Intent intentLogin = new Intent(LoginActivity.this, LoginRegisterActivity.class);
+                Intent intentLogin = new Intent(LoginActivity.this, LoginAllActivity.class);
                 startActivity(intentLogin);
                 handler.removeMessages(msgWhat);
                 finish();

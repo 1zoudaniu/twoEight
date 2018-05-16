@@ -9,13 +9,13 @@ import android.util.Log;
  * Created by Administrator on 2018/5/8.
  */
 
-public class BaseApplication extends Application {
+public class MyApp extends Application {
 
-    private static final String TAG = "BaseApplication";
+    private static final String TAG = "MyApp";
 
-    private static BaseApplication sInstance;
+    private static MyApp sInstance;
 
-    public static BaseApplication getInstance() {
+    public static MyApp getInstance() {
         return sInstance;
     }
 

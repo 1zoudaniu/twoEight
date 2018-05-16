@@ -8,8 +8,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.util.Log;
 
-import zou.te.happy.com.happyte.app.BaseApplication;
-import zou.te.happy.com.happyte.utils.SPUtil;
+import zou.te.happy.com.happyte.app.MyApp;
 import zou.te.happy.com.happyte.utils.SystemUtil;
 
 /**
@@ -92,8 +91,8 @@ public class ApkUpdateUtils {
             return false;
         }
 
-        if (info.packageName.equals(SystemUtil.getPackageInfo(BaseApplication.getInstance()).packageName)) {
-            if (info.versionCode > SystemUtil.getPackageInfo(BaseApplication.getInstance()).versionCode) {
+        if (info.packageName.equals(SystemUtil.getPackageInfo(MyApp.getInstance()).packageName)) {
+            if (info.versionCode > SystemUtil.getPackageInfo(MyApp.getInstance()).versionCode) {
                 return true;
             }
         }

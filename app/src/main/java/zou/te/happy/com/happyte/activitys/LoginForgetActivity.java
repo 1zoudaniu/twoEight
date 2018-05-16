@@ -6,7 +6,6 @@ import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -21,26 +20,24 @@ import zou.te.happy.com.happyte.beanLists.YzmBean;
 import zou.te.happy.com.happyte.constants.Constant;
 import zou.te.happy.com.happyte.constants.URLConstant;
 import zou.te.happy.com.happyte.dialogs.LoadingDialogUtil;
-import zou.te.happy.com.happyte.mvp.loginregister.presenter.RegisterPres;
 import zou.te.happy.com.happyte.mvp.loginregister.presenter.YzmPres;
-import zou.te.happy.com.happyte.mvp.loginregister.view.RegisterView;
+import zou.te.happy.com.happyte.mvp.loginregister.view.LoginView;
 import zou.te.happy.com.happyte.utils.MyLog;
 import zou.te.happy.com.happyte.utils.SPUtil;
-import zou.te.happy.com.happyte.utils.StatusBarUtil;
 import zou.te.happy.com.happyte.utils.ToastUtil;
 
 /**
- * 注册
+ * 忘记密码
  */
-public class LoginRegisterActivity extends BaseActivity implements RegisterView {
+public class LoginForgetActivity extends BaseActivity implements LoginView {
 
-    private EditText registerEditTel;
-    private EditText registerEditYzm;
-    private TextView registerTextGetYzm;
-    private EditText registerEditPassword;
-    private Button registerBtnLogin;
+    private EditText forgetEditTel;
+    private EditText forgetEditYzm;
+    private TextView forgetTextGetYzm;
+    private EditText forgetEditPassword;
+    private Button forgetBtnLogin;
 
-    private RegisterPres registerPres;
+    private YzmPres yzmPres;
     private LoadingDialogUtil mLoadingDialog;
 
     private MyCountDownTimer countDownTimer;
@@ -53,24 +50,21 @@ public class LoginRegisterActivity extends BaseActivity implements RegisterView 
 
     @Override
     public int bindLayout() {
-        //隐藏标题栏
-        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
-        StatusBarUtil.transparencyBar(this);
-        return R.layout.activity_login_register;
+        return R.layout.activity_login_forget;
     }
 
     @Override
     public void initView(Bundle savedInstanceState, View contentView) {
-        registerEditTel = (EditText) findViewById(R.id.register_edit_tel);
-        registerEditYzm = (EditText) findViewById(R.id.register_edit_yzm);
-        registerTextGetYzm = (TextView) findViewById(R.id.register_text_getYzm);
-        registerEditPassword = (EditText) findViewById(R.id.register_edit_password);
-        registerBtnLogin = (Button) findViewById(R.id.register_btn_login);
+        forgetEditTel = (EditText) findViewById(R.id.forget_edit_tel);
+        forgetEditYzm = (EditText) findViewById(R.id.forget_edit_yzm);
+        forgetTextGetYzm = (TextView) findViewById(R.id.forget_text_getYzm);
+        forgetEditPassword = (EditText) findViewById(R.id.forget_edit_password);
+        forgetBtnLogin = (Button) findViewById(R.id.forget_btn_login);
 
-        registerBtnLogin.setOnClickListener(this);
-        registerTextGetYzm.setOnClickListener(this);
+        forgetBtnLogin.setOnClickListener(this);
+        forgetTextGetYzm.setOnClickListener(this);
 
-        registerPres = new RegisterPres(this, this);
+        yzmPres = new YzmPres(this, this);
     }
 
     @Override
@@ -80,53 +74,52 @@ public class LoginRegisterActivity extends BaseActivity implements RegisterView 
 
     @Override
     public void onWidgetClick(View view) {
-        if (view == registerBtnLogin) {//登陆
-            if (TextUtils.isEmpty(registerEditTel.getText().toString().trim())) {
+        if (view == forgetBtnLogin) {//登陆
+            if (TextUtils.isEmpty(forgetEditTel.getText().toString().trim())) {
                 ToastUtil.showShortToast(this, "电话号码不能为空");
                 return;
             }
-            if (!URLConstant.isPhoneNumber(registerEditTel.getText().toString().trim())) {
+            if (!URLConstant.isPhoneNumber(forgetEditTel.getText().toString().trim())) {
                 ToastUtil.showShortToast(this, "电话号码格式错误");
                 return;
             }
-            if (TextUtils.isEmpty(registerEditYzm.getText().toString().trim())) {
+            if (TextUtils.isEmpty(forgetEditYzm.getText().toString().trim())) {
                 ToastUtil.showShortToast(this, "验证码不能为空");
                 return;
             }
-            if (registerEditYzm.getText().toString().trim().length() != 4) {
+            if (forgetEditYzm.getText().toString().trim().length() != 4) {
                 ToastUtil.showShortToast(this, "验证码错误");
                 return;
             }
-            if (!registerEditYzm.getText().toString().trim().equals(yzmString)) {
+            if (!forgetEditYzm.getText().toString().trim().equals(yzmString)) {
                 ToastUtil.showShortToast(this, "验证码错误");
                 return;
             }
-            if (TextUtils.isEmpty(registerEditPassword.getText().toString().trim())) {
+            if (TextUtils.isEmpty(forgetEditPassword.getText().toString().trim())) {
                 ToastUtil.showShortToast(this, "密码不能为空");
                 return;
             }
-            if (registerEditPassword.getText().toString().trim().length() < 6 || registerEditPassword.getText().toString().trim().length() > 18) {
+            if (forgetEditPassword.getText().toString().trim().length() < 6 || forgetEditPassword.getText().toString().trim().length() > 18) {
                 ToastUtil.showShortToast(this, "用户名或者密码错误");
                 return;
             }
-            Map<String, Object> registerMp = new HashMap<>();
-            registerMp.put("version", Constant.P_VERSION);
-            registerMp.put("deviceId", "121");
-            registerMp.put("mobile", registerEditTel.getText().toString());
-            registerMp.put("password", registerEditPassword.getText().toString().trim());
-            registerMp.put("confirmPassword", registerEditPassword.getText().toString().trim());
-            registerMp.put("verifyCode", yzmString);
-            registerMp.put("sourceType", "0");
-            registerMp.put("sign", URLConstant.md5(URLConstant.sign(registerMp)));
-            MyLog.d("注册参数" + registerMp.toString());
-            registerPres.sendregisterYzm(4, registerMp);
-        } else if (view == registerTextGetYzm) {//获取验证码
+            Map<String, Object> updateMap = new HashMap<>();
+            updateMap.put("version", Constant.P_VERSION);
+            updateMap.put("deviceId", "121");
+            updateMap.put("mobile", forgetEditTel.getText());
+            updateMap.put("password", forgetEditPassword.getText().toString().toString());
+            updateMap.put("confirmPassword", forgetEditPassword.getText().toString().toString());
+            updateMap.put("verifyCode", yzmString);
+            updateMap.put("sign", URLConstant.md5(URLConstant.sign(updateMap)));
+            MyLog.d("更改密码参数" + updateMap.toString());
+            yzmPres.sendForgetYzm(4, updateMap);
+        } else if (view == forgetTextGetYzm) {//获取验证码
             if (isFastClick()) {
-                if (TextUtils.isEmpty(registerEditTel.getText().toString().trim())) {
+                if (TextUtils.isEmpty(forgetEditTel.getText().toString().trim())) {
                     ToastUtil.showShortToast(this, "电话号码不能为空");
                     return;
                 }
-                if (!URLConstant.isPhoneNumber(registerEditTel.getText().toString().trim())) {
+                if (!URLConstant.isPhoneNumber(forgetEditTel.getText().toString().trim())) {
                     ToastUtil.showShortToast(this, "电话号码格式错误");
                     return;
                 }
@@ -134,9 +127,9 @@ public class LoginRegisterActivity extends BaseActivity implements RegisterView 
                 Map<String, Object> map = new HashMap<>();
                 map.put("version", Constant.P_VERSION);
                 map.put("deviceId", "121");
-                map.put("mobile", registerEditTel.getText());
+                map.put("mobile", forgetEditTel.getText());
                 map.put("sign", URLConstant.md5(URLConstant.sign(map)));
-                registerPres.sendregisterYzm(3, map);
+                yzmPres.sendForgetYzm(3, map);
             }
 
         }
@@ -153,22 +146,23 @@ public class LoginRegisterActivity extends BaseActivity implements RegisterView 
         LoadingDialogUtil.cancelLoadingDialog();
     }
 
+    //     3:验证码   4：更新密码   5：登陆
     @Override
     public void newDatas(int loOrReg, Object data) {
         if (loOrReg == 3) {//验证码
             ToastUtil.showShortToast(this, "验证码已发送");
             countDownTimer.start();
             yzmString = ((YzmBean) data).getSmsCode();
-        } else if (loOrReg == 4) {//注册
+        } else if (loOrReg == 4) {//更新密码
             ToastUtil.showShortToast(this, "密码已重置");
             Map<String, Object> loginMap = new HashMap<>();
             loginMap.put("version", Constant.P_VERSION);
-            loginMap.put("userName", registerEditTel.getText().toString().trim());
-            loginMap.put("password", registerEditPassword.getText().toString().trim());
+            loginMap.put("userName", forgetEditTel.getText().toString().trim());
+            loginMap.put("password", forgetEditPassword.getText().toString().trim());
             loginMap.put("deviceId", "121");
             loginMap.put("sign", URLConstant.md5(URLConstant.sign(loginMap)));
             MyLog.d("登陆参数" + loginMap.toString());
-            registerPres.sendregisterYzm(5, loginMap);
+            yzmPres.sendForgetYzm(5, loginMap);
         } else if (loOrReg == 5) {//登陆
             ToastUtil.showShortToast(this, "登陆成功");
             if (null != countDownTimer) {
@@ -177,17 +171,18 @@ public class LoginRegisterActivity extends BaseActivity implements RegisterView 
                 countDownTimer = null;
             }
             SPUtil.getInstance().putString(Constant.U_USERINFO, ((LoginBean) data).toString());
-            Intent intent = new Intent(LoginRegisterActivity.this, MainActivity.class);
+            Intent intent = new Intent(LoginForgetActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
         }
     }
 
+    //     3:验证码   4：更新密码   5：登陆
     @Override
     public void showLoadFailMsg(int loOrReg, String tTostring) {
         if (loOrReg == 3) {//验证码
             ToastUtil.showShortToast(this, tTostring);
-        } else if (loOrReg == 4) {//注册
+        } else if (loOrReg == 4) {//更新密码
             ToastUtil.showShortToast(this, tTostring);
         } else if (loOrReg == 5) {//登陆
             ToastUtil.showShortToast(this, tTostring);
@@ -204,17 +199,17 @@ public class LoginRegisterActivity extends BaseActivity implements RegisterView 
         @Override
         public void onTick(long l) {
             //防止计时过程中重复点击
-            registerTextGetYzm.setClickable(false);
-            registerTextGetYzm.setText(l / 1000 + "s");
+            forgetTextGetYzm.setClickable(false);
+            forgetTextGetYzm.setText(l / 1000 + "s");
         }
 
         //计时完毕的方法
         @Override
         public void onFinish() {
             //重新给Button设置文字
-            registerTextGetYzm.setText("获取验证码");
+            forgetTextGetYzm.setText("获取验证码");
             //设置可点击
-            registerTextGetYzm.setClickable(true);
+            forgetTextGetYzm.setClickable(true);
         }
     }
 
@@ -228,4 +223,5 @@ public class LoginRegisterActivity extends BaseActivity implements RegisterView 
         }
 
     }
+
 }
