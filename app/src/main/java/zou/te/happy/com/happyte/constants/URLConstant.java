@@ -17,7 +17,9 @@ import java.util.regex.Pattern;
 
 public class URLConstant {
 
-    public static final String API_SERVER = "https://qy.yewu.cishoo.com";
+    public static final String API_HEAD = "https://";
+    public static final String API_URL = "qy.yewu.cishoo.com";
+    public static final String API_SERVER = API_HEAD + "qy.yewu.cishoo.com";
 
     /**
      * @param map

@@ -28,13 +28,13 @@ public class RegisterModel {
 
             @Override
             public void onError(Throwable e) {
-                MyLog.d("忘记密码验证码-" + e.toString());
+                MyLog.d("注册证码-" + e.toString());
                 listener.onFailure(3, e);
             }
 
             @Override
             public void onNext(YzmBean testBean) {
-                MyLog.d("忘记密码验证码" + testBean.toString());
+                MyLog.d("注册证码" + testBean.toString());
                 listener.onSuccess(3, testBean);
             }
         });

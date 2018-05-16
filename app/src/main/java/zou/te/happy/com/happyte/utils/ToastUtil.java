@@ -5,6 +5,8 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Toast;
 
+import zou.te.happy.com.happyte.constants.URLConstant;
+
 /**
  * Created by Administrator on 2018/5/8.
  */
@@ -46,6 +48,9 @@ public class ToastUtil {
     }
 
     private static void showToast(Context context, CharSequence msg, int duration) {
+        if ((msg + "").contains(URLConstant.API_URL)) {
+            msg = "网络不可用,请检查网络";
+        }
         try {
             getToast(context);
             toast.setText(msg);
