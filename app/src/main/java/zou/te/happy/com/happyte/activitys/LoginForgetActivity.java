@@ -6,6 +6,7 @@ import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -24,6 +25,7 @@ import zou.te.happy.com.happyte.mvp.loginregister.presenter.YzmPres;
 import zou.te.happy.com.happyte.mvp.loginregister.view.LoginView;
 import zou.te.happy.com.happyte.utils.MyLog;
 import zou.te.happy.com.happyte.utils.SPUtil;
+import zou.te.happy.com.happyte.utils.StatusBarUtil;
 import zou.te.happy.com.happyte.utils.ToastUtil;
 
 /**
@@ -50,6 +52,9 @@ public class LoginForgetActivity extends BaseActivity implements LoginView {
 
     @Override
     public int bindLayout() {
+        //隐藏标题栏
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
+        StatusBarUtil.transparencyBar(this);
         return R.layout.activity_login_forget;
     }
 

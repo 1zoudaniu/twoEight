@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#459F86"
+    android:background="@color/bg_login_bg"
     tools:context="zou.te.happy.com.happyte.activitys.LoginAllActivity">
 
 
@@ -24,7 +24,7 @@
                 android:id="@+id/login_tv_tel"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
-                android:background="#4FC5AD"
+                android:background="@color/bg_login_bg_two"
                 android:gravity="center"
                 android:paddingLeft="4dp"
                 android:text="手机号码："
@@ -52,14 +52,13 @@
             android:layout_width="230dp"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:background="#ffffff">
+            android:layout_marginTop="10dp" >
 
             <TextView
                 android:id="@+id/login_tv_password"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
-                android:background="#4FC5AD"
+                android:background="@color/bg_login_bg_two"
                 android:gravity="center"
                 android:paddingLeft="4dp"
                 android:text="密        码："
@@ -74,7 +73,7 @@
                 android:layout_toRightOf="@+id/login_tv_password"
                 android:background="#ffffff"
                 android:digits="0123456789qwertyuioplkjhgfdsazxcvbnm"
-                android:hint="请输入密码                  "
+                android:hint="请输入密码"
                 android:inputType="textPassword"
                 android:lines="1"
                 android:maxLength="18"
@@ -97,10 +96,10 @@
                 android:layout_width="230dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
-                android:background="#4FC5AD"
-                android:text="登        陆"
+                android:background="@color/bg_login_bg_two"
+                android:text="登              陆"
                 android:textColor="#ffffff"
-                android:textSize="15sp" />
+                android:textSize="18sp" />
 
         </RelativeLayout>
 
@@ -114,7 +113,7 @@
                 android:id="@+id/login_text_forget"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
-                android:background="#4FC5AD"
+                android:background="@color/bg_login_bg_two"
                 android:gravity="center"
                 android:text="忘记密码"
                 android:textColor="#ffffff"
@@ -126,7 +125,7 @@
                 android:layout_height="50dp"
                 android:layout_marginLeft="30dp"
                 android:layout_toRightOf="@+id/login_text_forget"
-                android:background="#4FC5AD"
+                android:background="@color/bg_login_bg_two"
                 android:gravity="center"
                 android:text="新号注册"
                 android:textColor="#ffffff"

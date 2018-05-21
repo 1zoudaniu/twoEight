@@ -10,4 +10,8 @@
     <color name="t_tab_text_pressed">#f43906</color>
     <color name="t_tab_text_normal">#999999</color>
 
+    <!--登陆注册背景颜色 459F86  4FC5AD-->
+    <color name="bg_login_bg">#C64444</color>
+    <color name="bg_login_bg_two">#EB4141</color>
+
 </resources>
