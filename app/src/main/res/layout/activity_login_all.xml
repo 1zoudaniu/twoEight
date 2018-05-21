@@ -13,12 +13,17 @@
         android:layout_centerInParent="true"
         android:orientation="vertical">
 
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/icon_loading" />
+
         <RelativeLayout
             android:layout_width="230dp"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:background="#ffffff">
+            android:layout_marginTop="30dp">
 
             <TextView
                 android:id="@+id/login_tv_tel"
