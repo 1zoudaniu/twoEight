@@ -39,7 +39,7 @@ public class LoginAllActivity extends BaseActivity implements LoginView {
     private EditText loginEditPassword;
     private TextView loginTextForget;
     private Button loginBtnLogin;
-    private Button loginBtnRegister;
+    private TextView loginBtnRegister;
 
     private LoginPres loginPres;
     private LoadingDialogUtil mLoadingDialog;
@@ -63,7 +63,7 @@ public class LoginAllActivity extends BaseActivity implements LoginView {
         loginEditPassword = (EditText) findViewById(R.id.login_edit_password);
         loginTextForget = (TextView) findViewById(R.id.login_text_forget);
         loginBtnLogin = (Button) findViewById(R.id.login_btn_login);
-        loginBtnRegister = (Button) findViewById(R.id.login_btn_register);
+        loginBtnRegister = (TextView) findViewById(R.id.login_btn_register);
 
         loginBtnLogin.setOnClickListener(this);
         loginBtnRegister.setOnClickListener(this);
