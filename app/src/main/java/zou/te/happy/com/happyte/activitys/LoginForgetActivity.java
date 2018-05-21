@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.HashMap;
@@ -38,9 +39,11 @@ public class LoginForgetActivity extends BaseActivity implements LoginView {
     private TextView forgetTextGetYzm;
     private EditText forgetEditPassword;
     private Button forgetBtnLogin;
+    private RelativeLayout forgetRlBack;
 
     private YzmPres yzmPres;
     private LoadingDialogUtil mLoadingDialog;
+
 
     private MyCountDownTimer countDownTimer;
     private String yzmString;//验证码
@@ -65,9 +68,12 @@ public class LoginForgetActivity extends BaseActivity implements LoginView {
         forgetTextGetYzm = (TextView) findViewById(R.id.forget_text_getYzm);
         forgetEditPassword = (EditText) findViewById(R.id.forget_edit_password);
         forgetBtnLogin = (Button) findViewById(R.id.forget_btn_login);
+        forgetRlBack = (RelativeLayout) findViewById(R.id.forget_rl_back);
+
 
         forgetBtnLogin.setOnClickListener(this);
         forgetTextGetYzm.setOnClickListener(this);
+        forgetRlBack.setOnClickListener(this);
 
         yzmPres = new YzmPres(this, this);
     }
@@ -137,6 +143,13 @@ public class LoginForgetActivity extends BaseActivity implements LoginView {
                 yzmPres.sendForgetYzm(3, map);
             }
 
+        } else if (view==forgetRlBack) {
+            if (null != countDownTimer) {
+                countDownTimer.cancel();
+                countDownTimer.onFinish();
+                countDownTimer = null;
+            }
+            finish();
         }
     }
 

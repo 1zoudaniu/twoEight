@@ -52,7 +52,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/btn_coner_loginregister_bg"
-                android:text="登陆/注册"
+                android:text="登陆"
                 android:textColor="#ffffff"
                 android:textSize="15sp" />
 
@@ -68,9 +68,9 @@
                 android:id="@+id/btn_loginexp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/btn_coner_loginexp_bg"
-                android:text="立即体验"
-                android:textColor="#f43906"
+                android:background="@drawable/btn_coner_loginregister_bg"
+                android:text="注册"
+                android:textColor="#ffffff"
                 android:textSize="15sp" />
 
         </RelativeLayout>

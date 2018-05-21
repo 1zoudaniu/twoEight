@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.alibaba.fastjson.JSON;
@@ -39,10 +40,10 @@ public class LoginAllActivity extends BaseActivity implements LoginView {
     private EditText loginEditPassword;
     private TextView loginTextForget;
     private Button loginBtnLogin;
-    private TextView loginBtnRegister;
 
     private LoginPres loginPres;
     private LoadingDialogUtil mLoadingDialog;
+    private RelativeLayout btnLoginRlBack;
 
     @Override
     public void initData(@Nullable Bundle bundle) {
@@ -63,11 +64,11 @@ public class LoginAllActivity extends BaseActivity implements LoginView {
         loginEditPassword = (EditText) findViewById(R.id.login_edit_password);
         loginTextForget = (TextView) findViewById(R.id.login_text_forget);
         loginBtnLogin = (Button) findViewById(R.id.login_btn_login);
-        loginBtnRegister = (TextView) findViewById(R.id.login_btn_register);
+        btnLoginRlBack = (RelativeLayout) findViewById(R.id.login_rl_back);
 
         loginBtnLogin.setOnClickListener(this);
-        loginBtnRegister.setOnClickListener(this);
         loginTextForget.setOnClickListener(this);
+        btnLoginRlBack.setOnClickListener(this);
 
         loginPres = new LoginPres(this, this);
     }
@@ -104,13 +105,10 @@ public class LoginAllActivity extends BaseActivity implements LoginView {
             loginMap.put("sign", URLConstant.md5(URLConstant.sign(loginMap)));
             MyLog.d("登陆参数" + loginMap.toString());
             loginPres.loadData(1, loginMap);
-        } else if (view == loginBtnRegister) {  //注册
-            Intent intentRegister = new Intent(LoginAllActivity.this, LoginRegisterActivity.class);
-            startActivity(intentRegister);
-            finish();
         } else if (view == loginTextForget) {//忘记密码
             Intent intentForget = new Intent(LoginAllActivity.this, LoginForgetActivity.class);
             startActivity(intentForget);
+        } else if (view == btnLoginRlBack) {//返回
             finish();
         }
     }
@@ -131,7 +129,7 @@ public class LoginAllActivity extends BaseActivity implements LoginView {
     public void newDatas(int loOrReg, Object data) {
         if (loOrReg == 1) {
             MyLog.d("用户信息" + data.toString());
-            SPUtil.getInstance().putString(Constant.U_USERINFO, ((LoginBean)data).toString());
+            SPUtil.getInstance().putString(Constant.U_USERINFO, ((LoginBean) data).toString());
             Intent intent = new Intent(LoginAllActivity.this, MainActivity.class);
             startActivity(intent);
             finish();

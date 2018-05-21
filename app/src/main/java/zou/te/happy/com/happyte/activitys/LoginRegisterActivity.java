@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.HashMap;
@@ -39,6 +40,8 @@ public class LoginRegisterActivity extends BaseActivity implements RegisterView 
     private TextView registerTextGetYzm;
     private EditText registerEditPassword;
     private Button registerBtnLogin;
+    private RelativeLayout registerRlBack;
+
 
     private RegisterPres registerPres;
     private LoadingDialogUtil mLoadingDialog;
@@ -66,9 +69,12 @@ public class LoginRegisterActivity extends BaseActivity implements RegisterView 
         registerTextGetYzm = (TextView) findViewById(R.id.register_text_getYzm);
         registerEditPassword = (EditText) findViewById(R.id.register_edit_password);
         registerBtnLogin = (Button) findViewById(R.id.register_btn_login);
+        registerRlBack = (RelativeLayout) findViewById(R.id.register_rl_back);
+
 
         registerBtnLogin.setOnClickListener(this);
         registerTextGetYzm.setOnClickListener(this);
+        registerRlBack.setOnClickListener(this);
 
         registerPres = new RegisterPres(this, this);
     }
@@ -138,7 +144,13 @@ public class LoginRegisterActivity extends BaseActivity implements RegisterView 
                 map.put("sign", URLConstant.md5(URLConstant.sign(map)));
                 registerPres.sendregisterYzm(3, map);
             }
-
+        } else if (view == registerRlBack) {
+            if (null != countDownTimer) {
+                countDownTimer.cancel();
+                countDownTimer.onFinish();
+                countDownTimer = null;
+            }
+            finish();
         }
     }
 

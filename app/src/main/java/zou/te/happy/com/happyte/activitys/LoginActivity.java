@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -32,6 +33,7 @@ public class LoginActivity extends BaseActivity {
     private Button btnLoginregister;
     private Button btnLoginexp;
     private TextView btnLoginText;
+
     private String[] guideText = new String[]{"妈了个巴子，管求你妈卖批的",
             "乌漆嘛黑的，怎么才能看清楚啊", "三天两头的来这里看这个，合适吗老铁？"};
 
@@ -84,6 +86,7 @@ public class LoginActivity extends BaseActivity {
 
         btnLoginregister.setOnClickListener(this);
         btnLoginexp.setOnClickListener(this);
+
     }
 
     @Override
@@ -98,13 +101,11 @@ public class LoginActivity extends BaseActivity {
                 Intent intentLogin = new Intent(LoginActivity.this, LoginAllActivity.class);
                 startActivity(intentLogin);
                 handler.removeMessages(msgWhat);
-                finish();
                 break;
             case R.id.btn_loginexp:
-                Intent intentExp = new Intent(LoginActivity.this, MainActivity.class);
+                Intent intentExp = new Intent(LoginActivity.this, LoginRegisterActivity.class);
                 startActivity(intentExp);
                 handler.removeMessages(msgWhat);
-                finish();
                 break;
         }
     }
@@ -148,33 +149,5 @@ public class LoginActivity extends BaseActivity {
         super.onStop();
         handler.removeMessages(msgWhat);
     }
-
-//    public void showLogin() {
-//        mShowLoginDialog = new Dialog(this, R.style.HelpDialogAll);
-//        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//        LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.dialog_loginregister, null);
-//        mShowLoginDialog.setContentView(layout);
-//        mShowLoginDialog.findViewById(R.id.dialog_login_no_login).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//            }
-//        });
-//        mShowLoginDialog.findViewById(R.id.dialog_login_login).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//            }
-//        });
-//
-//        Window w = mShowLoginDialog.getWindow();
-//        WindowManager.LayoutParams lp = w.getAttributes();
-//        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
-//        lp.height = WindowManager.LayoutParams.MATCH_PARENT;
-//        w.setAttributes(lp);
-//        w.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-//        mShowLoginDialog.setCancelable(false);
-//        mShowLoginDialog.setCanceledOnTouchOutside(false);
-//        mShowLoginDialog.show();
-//    }
 
 }
