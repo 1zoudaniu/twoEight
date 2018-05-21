@@ -41,7 +41,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -57,7 +57,7 @@
         <EditText
             android:id="@+id/login_edit_tel"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:layout_marginLeft="5dp"
             android:layout_toRightOf="@+id/login_tv_tel"
             android:background="@null"
@@ -81,7 +81,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -97,7 +97,7 @@
         <EditText
             android:id="@+id/login_edit_password"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:layout_marginLeft="5dp"
             android:layout_toRightOf="@+id/login_tv_password"
             android:background="@null"
@@ -114,7 +114,7 @@
         <TextView
             android:id="@+id/login_text_forget"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:layout_alignParentRight="true"
             android:gravity="center_vertical"
             android:text="忘记密码？"
@@ -132,7 +132,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -141,7 +141,7 @@
         <Button
             android:id="@+id/login_btn_login"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:background="@drawable/btn_coner_loginexp_bg"
             android:text="登              陆"
             android:textColor="#ffffff"

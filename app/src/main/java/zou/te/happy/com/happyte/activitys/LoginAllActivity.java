@@ -19,6 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import zou.te.happy.com.happyte.R;
+import zou.te.happy.com.happyte.app.AppManager;
 import zou.te.happy.com.happyte.base.BaseActivity;
 import zou.te.happy.com.happyte.beanLists.LoginBean;
 import zou.te.happy.com.happyte.constants.Constant;
@@ -132,7 +133,7 @@ public class LoginAllActivity extends BaseActivity implements LoginView {
             SPUtil.getInstance().putString(Constant.U_USERINFO, ((LoginBean) data).toString());
             Intent intent = new Intent(LoginAllActivity.this, MainActivity.class);
             startActivity(intent);
-            finish();
+            AppManager.finishAllActivity();
         }
     }
 

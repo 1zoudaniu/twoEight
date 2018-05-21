@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import zou.te.happy.com.happyte.R;
+import zou.te.happy.com.happyte.app.AppManager;
 import zou.te.happy.com.happyte.base.BaseActivity;
 import zou.te.happy.com.happyte.beanLists.LoginBean;
 import zou.te.happy.com.happyte.beanLists.YzmBean;
@@ -191,7 +192,7 @@ public class LoginRegisterActivity extends BaseActivity implements RegisterView 
             SPUtil.getInstance().putString(Constant.U_USERINFO, ((LoginBean) data).toString());
             Intent intent = new Intent(LoginRegisterActivity.this, MainActivity.class);
             startActivity(intent);
-            finish();
+            AppManager.finishAllActivity();
         }
     }
 
