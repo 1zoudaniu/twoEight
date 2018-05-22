@@ -1,13 +1,21 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="zou.te.happy.com.happyte.fragments.MyFragment">
 
     <TextView
         android:layout_marginTop="100dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:text="@string/hello_blank_fragment3" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/cl_llll"
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="瞎几把点"/>
+
+</LinearLayout>

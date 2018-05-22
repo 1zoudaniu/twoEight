@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="170dp"
+    android:background="#cccccc"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dialog_take_photo"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_marginTop="2dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:text="拍一张照片"
+        android:textColor="#343f4a"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/dialog_take_gal"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_marginTop="2dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:text="从相册中选择"
+        android:textColor="#343f4a"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/dialog_take_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_marginTop="10dp"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:text="取 消"
+        android:textColor="#343f4a"
+        android:textSize="15sp" />
+
+
+</LinearLayout>
