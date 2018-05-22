@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.view.Window;
 import android.widget.RadioButton;
@@ -25,6 +26,7 @@ public class MainActivity extends BaseActivity {
     private CustomViewPager mainVp;
     private Fragment[] fragments;
     private MyFragmentAdapter myFragmentAdapter;
+    private FragmentTransaction mTransaction;
 
     @Override
     public void initData(@Nullable Bundle bundle) {
@@ -57,6 +59,8 @@ public class MainActivity extends BaseActivity {
         mainRbHome.setOnClickListener(this);
         mainRbContent.setOnClickListener(this);
         mainRbMy.setOnClickListener(this);
+
+        mTransaction = getSupportFragmentManager().beginTransaction();
     }
 
     @Override
@@ -106,6 +110,5 @@ public class MainActivity extends BaseActivity {
             return fragments.length == 0 ? 0 : fragments.length;
         }
     }
-
 
 }

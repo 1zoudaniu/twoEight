@@ -11,7 +11,7 @@
      没有请求的权限，此应用程序可能无法正常工作。
          打开应用程序设置屏幕以修改应用程序权限。
     </string>
-    <string name="title_settings_dialog">需要权限</string>
+    <string name="title_settings_dialog">权限申请</string>
     <string name="rationale_camer">这个应用程序需要访问你的相机权限才可以拍照。</string>
     <string name="rationale_store">这个应用程序需要访问你的存储权限才可以读取图片。</string>
 

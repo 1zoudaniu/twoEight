@@ -50,7 +50,7 @@ public abstract class BaseActivity extends AppCompatActivity
      */
     protected boolean isFastClick() {
         long now = System.currentTimeMillis();
-        if (now - lastClick >= 500) {
+        if (now - lastClick >= 100) {
             lastClick = now;
             return false;
         }
