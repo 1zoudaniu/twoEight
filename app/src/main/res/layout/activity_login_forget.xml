@@ -7,37 +7,7 @@
     android:orientation="vertical"
     tools:context="zou.te.happy.com.happyte.activitys.LoginForgetActivity">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:background="@color/bg_login_bg_two" />
-
-    <RelativeLayout
-        android:id="@+id/forget_rl_back"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/bg_login_bg_two">
-
-        <ImageView
-            android:id="@+id/login_iv_back"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="20dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_back_white" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/login_iv_back"
-            android:gravity="center"
-            android:text="忘记密码"
-            android:textColor="#ffffff"
-            android:textSize="18sp" />
-
-    </RelativeLayout>
+    <include layout="@layout/layout_head_title" />
 
     <!--手机号-->
     <RelativeLayout

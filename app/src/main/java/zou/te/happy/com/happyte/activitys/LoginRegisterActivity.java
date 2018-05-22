@@ -42,7 +42,7 @@ public class LoginRegisterActivity extends BaseActivity implements RegisterView 
     private EditText registerEditPassword;
     private Button registerBtnLogin;
     private RelativeLayout registerRlBack;
-
+    private TextView registerTitle;
 
     private RegisterPres registerPres;
     private LoadingDialogUtil mLoadingDialog;
@@ -70,9 +70,10 @@ public class LoginRegisterActivity extends BaseActivity implements RegisterView 
         registerTextGetYzm = (TextView) findViewById(R.id.register_text_getYzm);
         registerEditPassword = (EditText) findViewById(R.id.register_edit_password);
         registerBtnLogin = (Button) findViewById(R.id.register_btn_login);
-        registerRlBack = (RelativeLayout) findViewById(R.id.register_rl_back);
+        registerRlBack = (RelativeLayout) findViewById(R.id.layout_head_title_rl_back);
+        registerTitle = (TextView) findViewById(R.id.layout_head_title_tv_title);
 
-
+        registerTitle.setText("新用户注册");
         registerBtnLogin.setOnClickListener(this);
         registerTextGetYzm.setOnClickListener(this);
         registerRlBack.setOnClickListener(this);

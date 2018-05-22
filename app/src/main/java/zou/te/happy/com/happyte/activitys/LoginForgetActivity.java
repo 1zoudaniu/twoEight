@@ -41,6 +41,7 @@ public class LoginForgetActivity extends BaseActivity implements LoginView {
     private EditText forgetEditPassword;
     private Button forgetBtnLogin;
     private RelativeLayout forgetRlBack;
+    private TextView forgetTitle;
 
     private YzmPres yzmPres;
     private LoadingDialogUtil mLoadingDialog;
@@ -69,9 +70,10 @@ public class LoginForgetActivity extends BaseActivity implements LoginView {
         forgetTextGetYzm = (TextView) findViewById(R.id.forget_text_getYzm);
         forgetEditPassword = (EditText) findViewById(R.id.forget_edit_password);
         forgetBtnLogin = (Button) findViewById(R.id.forget_btn_login);
-        forgetRlBack = (RelativeLayout) findViewById(R.id.forget_rl_back);
+        forgetRlBack = (RelativeLayout) findViewById(R.id.layout_head_title_rl_back);
+        forgetTitle = (TextView) findViewById(R.id.layout_head_title_tv_title);
 
-
+        forgetTitle.setText("忘记密码");
         forgetBtnLogin.setOnClickListener(this);
         forgetTextGetYzm.setOnClickListener(this);
         forgetRlBack.setOnClickListener(this);

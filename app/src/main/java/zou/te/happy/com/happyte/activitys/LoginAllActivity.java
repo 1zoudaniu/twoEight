@@ -45,6 +45,7 @@ public class LoginAllActivity extends BaseActivity implements LoginView {
     private LoginPres loginPres;
     private LoadingDialogUtil mLoadingDialog;
     private RelativeLayout btnLoginRlBack;
+    private TextView btnLoginTitle;
 
     @Override
     public void initData(@Nullable Bundle bundle) {
@@ -65,8 +66,10 @@ public class LoginAllActivity extends BaseActivity implements LoginView {
         loginEditPassword = (EditText) findViewById(R.id.login_edit_password);
         loginTextForget = (TextView) findViewById(R.id.login_text_forget);
         loginBtnLogin = (Button) findViewById(R.id.login_btn_login);
-        btnLoginRlBack = (RelativeLayout) findViewById(R.id.login_rl_back);
+        btnLoginRlBack = (RelativeLayout) findViewById(R.id.layout_head_title_rl_back);
+        btnLoginTitle = (TextView) findViewById(R.id.layout_head_title_tv_title);
 
+        btnLoginTitle.setText("手机号登陆");
         loginBtnLogin.setOnClickListener(this);
         loginTextForget.setOnClickListener(this);
         btnLoginRlBack.setOnClickListener(this);

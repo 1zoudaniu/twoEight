@@ -67,7 +67,7 @@ public class ZylLoadingDialog  extends Dialog {
                 tvMessage.setText(message);
             }
             if (null == drawable) {
-                yzsLoading.setImageDrawable(context.getResources().getDrawable(R.mipmap.icon_loading));
+                yzsLoading.setImageDrawable(context.getResources().getDrawable(R.mipmap.ic_loading_red));
             } else {
                 yzsLoading.setImageDrawable(drawable);
             }
