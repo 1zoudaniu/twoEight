@@ -28,7 +28,7 @@ public class OkHttp3Utils {
             //同样okhttp3后也使用build设计模式
             mOkHttpClient = new OkHttpClient.Builder()
                     .cookieJar(new NovateCookieManger(MyApp.getInstance()))
-                    .cache(new Cache(new File(MyApp.getInstance().getExternalCacheDir(),"test_cache"),10 * 1024 * 1024))
+                    .cache(new Cache(new File(MyApp.getInstance().getExternalCacheDir(),"twoEight_cache"),10 * 1024 * 1024))
                     .addInterceptor(new CaheInterceptor(MyApp.getInstance()))
                     .addNetworkInterceptor(new CaheInterceptor(MyApp.getInstance()))
                     .connectTimeout(10, TimeUnit.SECONDS)
