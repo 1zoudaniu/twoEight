@@ -1,7 +1,5 @@
 package zou.te.happy.com.happyte.netdata.retrofit;
 
-import android.content.Context;
-
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
