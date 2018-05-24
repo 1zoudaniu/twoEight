@@ -2,6 +2,7 @@ package zou.te.happy.com.happyte.fragments;
 
 
 import android.Manifest;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -144,5 +145,6 @@ public class MyFragment extends BaseLazyFragment implements EasyPermissions.Perm
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
     }
+
 
 }
